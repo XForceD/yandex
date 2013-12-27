@@ -1,0 +1,20 @@
+<domain type='qemu' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+  <name>QEmu-fedora-i686</name>
+  <memory>219200</memory> 
+  <os>
+    <type>hvm</type>
+    <loader>/usr/lib/xen/boot/hvmloader</loader>
+    <kernel>/root/f8-i386-vmlinuz</kernel>
+    <initrd>/root/f8-i386-initrd</initrd>
+	<bootmenu enable='yes'/>
+    <cmdline>console=ttyS0 ks=http://example.com/f8-i386/os/</cmdline>
+    <dtb>/root/ppc.dtb</dtb>
+  </os>
+  <devices>
+    <emulator>/usr/bin/qemu-system-x86_64</emulator>
+  </devices>
+  <qemu:commandline>
+    <qemu:arg value='-newarg'/>
+    <qemu:env name='QEMU_ENV' value='VAL'/>
+  </qemu:commandline>
+</domain>
